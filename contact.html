@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS-Contact</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <a href="about.html" target="_blank" rel="noopener">关于我</a>
+            </td>
+            <td>
+                <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
+            </td>
+            <td>
+                <a href="contact.html" target="_blank" rel="noopener">联系我</a>
+            </td>
+        </tr>
+        <tr></tr>
+    </table>
+    <!-- 邮件链接 -->
+    <p><a href="mailto:3413571766@qq.com">发送邮件给我们</a></p>
+
+    <!-- 电话链接 -->
+    <p><a href="tel:+8613800138000">拨打联系电话</a></p>
+
+    <!-- 联系表单 -->
+    <form action="https://www.baidu.com" method="post">
+        <fieldset>
+            <legend>联系我</legend>
+
+            <!-- 文本输入：姓名 -->
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required><br><br>
+
+            <!-- 邮箱输入 -->
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" value="3413571766@qq.com" readonly><br><br>
+
+            <!-- 电话输入 -->
+            <label for="phone">电话：</label>
+            <input type="tel" id="phone" name="phone" placeholder="请输入您的电话号码"><br><br>
+
+            <!-- 单选框：性别 -->
+            <label>性别：</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">男</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">女</label><br><br>
+
+            <!-- 多选框：兴趣 -->
+            <label>兴趣爱好：</label>
+            <input type="checkbox" id="reading" name="hobbies" value="reading">
+            <label for="reading">阅读</label>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">运动</label>
+            <input type="checkbox" id="music" name="hobbies" value="music">
+            <label for="music">音乐</label><br><br>
+
+            <!-- 下拉选择框 -->
+            <label for="country">国家：</label>
+            <select id="country" name="country">
+                <option value="">请选择</option>
+                <option value="china" selected>中国</option>
+                <option value="usa">美国</option>
+                <option value="uk">英国</option>
+                <option value="japan">日本</option>
+            </select><br><br>
+
+            <!-- 文本域：留言 -->
+            <label for="message">留言：</label><br>
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="请输入您的留言"></textarea><br><br>
+
+            <!-- 文件上传 -->
+            <label for="file">上传文件：</label>
+            <input type="file" id="file" name="file"><br><br>
+
+            <!-- 提交按钮 -->
+            <button type="submit">提交表单</button>
+            <button type="reset">重置</button>
+        </fieldset>
+    </form>
+
+    <!-- 嵌入地图（以百度地图为例） -->
+    <h3>我们的位置</h3>
+    <iframe 
+        src="https://map.baidu.com/@12959100,4823850,12z" 
+        width="600" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</body>
+</html>
