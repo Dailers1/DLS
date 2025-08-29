@@ -1,71 +1,116 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DLS-Portfolio</title>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DLS-Portfolio</title>
+    <style>
+        @import url(style.css);
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/蓝字横版组合.png" alt="DLS-Logo">
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
                     <a href="about.html" target="_blank" rel="noopener">关于我</a>
-                </td>
-                <td>
+                </li>
+                <li>
                     <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
-                </td>
-                <td>
+                </li>
+                <li>
                     <a href="contact.html" target="_blank" rel="noopener">联系我</a>
-                </td>
-            </tr>
-            <tr></tr>
-        </table>
-        <article>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="projects-grid">
+        <article class="project-card">
             <header>
-                <h2>我的项目1</h2>
+                <h2>基于点云神经网络的脑疾病纤维拓扑结构识别方法研究</h2>
+                <span class="project-tag">国创项目</span>
             </header>
             <section>
                 <h3>项目描述</h3>
-                <p>项目1的描述</p>
+                <p>研究基于点云神经网络的脑疾病纤维拓扑结构识别方法，为脑疾病诊断提供新的技术手段。</p>
             </section>
             <section>
                 <h3>项目技术</h3>
-                <p>项目1的技术</p>
+                <p>点云处理、深度学习、神经网络、医学图像分析</p>
             </section>
             <section>
                 <h3>项目成果</h3>
-                <p>项目1的成果</p>
-            </section>
-            <section>
-                <h3>项目过程</h3>
-                <p>项目1的过程</p>
-                <ol>
-                    <li>项目1的步骤1</li>
-                    <li>项目1的步骤2</li>
-                    <li>项目1的步骤3</li>
-                </ol>
+                <p>建立了基于点云数据的脑纤维拓扑结构识别模型，提高了识别准确率。</p>
             </section>
             <section>
                 <h3>项目链接</h3>
-                <a href="https://github.com/DLS-2004/project1" target="_blank" rel="noopener">项目1的GitHub地址</a>
+                <a href="https://github.com/Dailers1/TEST" target="_blank" rel="noopener" class="project-link">查看GitHub</a>
             </section>
         </article>
-        <article>
+
+        <article class="project-card">
             <header>
-                <ul>
-                    <li><a href="https://github.com/DLS-2004/project1" target="_blank" rel="noopener">项目1的GitHub地址</a></li>
-                    <li><a href="https://github.com/DLS-2004/project2" target="_blank" rel="noopener">项目2的GitHub地址</a></li>
-                    <li><a href="https://github.com/DLS-2004/project3" target="_blank" rel="noopener">项目3的GitHub地址</a></li>
-                    <li><a href="https://github.com/DLS-2004/project4" target="_blank" rel="noopener">项目4的GitHub地址</a></li>
-                    <li><a href="https://github.com/DLS-2004/project5" target="_blank" rel="noopener">项目5的GitHub地址</a></li>
-                </ul>
+                <h2>"智能驭行"--基于多模态增量学习的自动驾驶智能感知研究</h2>
+                <span class="project-tag">校创项目</span>
             </header>
+            <section>
+                <h3>项目描述</h3>
+                <p>研究多模态增量学习在自动驾驶感知中的应用，提高系统对复杂环境的适应能力。</p>
+            </section>
+            <section>
+                <h3>项目技术</h3>
+                <p>多模态学习、增量学习、计算机视觉、自动驾驶</p>
+            </section>
+            <section>
+                <h3>项目成果</h3>
+                <p>优秀结题，建立了多模态增量学习框架，提升了感知系统的鲁棒性。</p>
+            </section>
+            <section>
+                <h3>项目链接</h3>
+                <a href="https://github.com/Dailers1/TEST" target="_blank" rel="noopener" class="project-link">查看GitHub</a>
+            </section>
         </article>
-        <article>
+
+        <article class="project-card">
             <header>
-                <h2>项目视频</h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=0000000000000000" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h2>基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究</h2>
+                <span class="project-tag">国创项目</span>
             </header>
+            <section>
+                <h3>项目描述</h3>
+                <p>研究高空无人机目标检测与跟踪系统，实现轻量化和实时性能的平衡。</p>
+            </section>
+            <section>
+                <h3>项目技术</h3>
+                <p>目标检测、目标跟踪、多模态融合、轻量化网络</p>
+            </section>
+            <section>
+                <h3>项目成果</h3>
+                <p>设计了轻量化的检测跟踪网络，在保证精度的同时显著提升了推理速度。</p>
+            </section>
+            <section>
+                <h3>项目链接</h3>
+                <a href="https://github.com/Dailers1/TEST" target="_blank" rel="noopener" class="project-link">查看GitHub</a>
+            </section>
         </article>
-    </body>
+    </div>
+    <div class="pictures">
+        <h2>项目图片介绍</h2>
+        <header class="pictures-header">
+            <img src="images/1.png" alt="项目1的图片">
+            <img src="images/2.png" alt="项目2的图片">
+            <img src="images/3.png" alt="项目3的图片">
+            <img src="images/4.png" alt="项目4的图片">
+            <img src="images/5.png" alt="项目5的图片">
+            <img src="images/6.png" alt="项目6的图片">
+        </header>
+    </div>
+</body>
+
 </html>

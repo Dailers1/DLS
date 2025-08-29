@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DLS-About</title>
-    </head>
-    <body>
-        <table>
-            <tr>
-                <td>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url(style.css);
+    </style>
+    <title>DLS-About</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/蓝字横版组合.png" alt="DLS-Logo">
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
                     <a href="about.html" target="_blank" rel="noopener">关于我</a>
-                </td>
-                <td>
+                </li>
+                <li>
                     <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
-                </td>
-                <td>
+                </li>
+                <li>
                     <a href="contact.html" target="_blank" rel="noopener">联系我</a>
-                </td>
-            </tr>
-            <tr></tr>
-        </table>
-        <h1>段林帅的个人简历</h1>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h1>段林帅的个人简历</h1>
 
-        <article>
-            <header>
-                <h2>目录</h2>
-                <nav>
-                    <ul>
-                        <li><a href="#base">基本信息</a></li>
-                        <li><a href="#project">项目经历</a></li>
-                        <li><a href="#honor">荣誉及奖惩</a></li>
-                        <li><a href="#research">科研成果</a></li>
-                        <li><a href="#courses">所学课程</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </article>
-    
-        <section>
-            <h2 id="base">基本信息</h2>
-            <p>姓名：段林帅</p>
-            <p>年龄：20</p> 
-            <p>专业：计算机科学与技术</p>
-            <img src="images/头像.jpg" alt="这是DLS的头像">
-        </section>
+    <main class="main-layout">
+        <div class="main-content">
+            <article>
+                <header>
+                    <h2>目录</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="#base">基本信息</a></li>
+                            <li><a href="#project">项目经历</a></li>
+                            <li><a href="#honor">荣誉及奖惩</a></li>
+                            <li><a href="#research">科研成果</a></li>
+                            <li><a href="#courses">所学课程</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </article>
 
-        <section>
+            <section>
+                <h2 id="base">基本信息</h2>
+                <p>姓名：段林帅</p>
+                <p>年龄：20</p>
+                <p>专业：计算机科学与技术</p>
+                <img src="images/头像.jpg" alt="这是DLS的头像">
+            </section>
+
             <h2 id="project">项目经历</h2>
             <ul>
                 <li>2024<strong>国创（参与）</strong>：《基于点云神经网络的脑疾病纤维拓扑结构识别方法研究》（未结题）</li>
@@ -55,92 +65,84 @@
                 <li>2025省创（参与）：《杭州西湖旅游活动对水质影响的量化分析与可持续策略研究》（未结题）</li>
                 <li>2025校创（参与）：《草木含情，茶润身心》（商学院项目，未结题）</li>
             </ul>
-        </section>
 
-        <section>
             <h2 id="honor">荣誉及奖惩</h2>
             <ul>
                 <li>奖项</li>
+                <ul>
+                    <li>2023年11月 2023浙大城市学院高等数学（微积分）竞赛成功参与奖</li>
+                    <li>2024年5月 2024年浙大城市学院第十八届大学生数学建模竞赛校级三等级</li>
+                    <li>2024年10月 2024第七届“外教社杯”全国高校学生跨文化能力大赛（浙江赛区）校级三等级</li>
+                    <li>2024年12月 学业优秀二等奖学金</li>
+                    <li>2024年12月 2024第十六届全国大学生数学竞赛（非数学A类）三等奖</li>
+                    <li>2024年12月 2024浙江省大学生物理创新（理论）竞赛省级二等奖</li>
+                    <li>2025年4月 美国大学生数学建模竞赛成功参赛奖</li>
+                    <li>2025年5月 “正大杯”第十五届全国大学生市场调查与分析大赛省级三等级</li>
+                    <li>2024年12月 2024浙江省大学生物理创新（理论）竞赛省级二等奖</li>
+                </ul>
+                <li>荣誉</li>
+                <ul>
+                    <li>省级优秀志愿者</li>
+                </ul>
             </ul>
-        </section>
-    <h2 id="project">项目经历</h2>
-    <ul>
-        <li>2024<strong>国创（参与）</strong>：《基于点云神经网络的脑疾病纤维拓扑结构识别方法研究》（未结题）</li>
-        <li>2024校创（主持）：《“智能驭行”--基于多模态增量学习的自动驾驶智能感知研究》<strong>（优秀结题）</strong></li>
-        <li>2025<strong>国创（主持）</strong>：《基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究》（未结题）</li>
-        <li>2025省创（参与）：《面向具身智能的视触觉持续学习及应用研究》（未结题）</li>
-        <li>2025省创（参与）：《杭州西湖旅游活动对水质影响的量化分析与可持续策略研究》（未结题）</li>
-        <li>2025校创（参与）：《草木含情，茶润身心》（商学院项目，未结题）</li>
-    </ul>
 
-    <h2 id="honor">荣誉及奖惩</h2>
-    <ul>
-        <li>奖项</li>
-        <ul>
-            <li>2023年11月 2023浙大城市学院高等数学（微积分）竞赛成功参与奖</li>
-            <li>2024年5月 2024年浙大城市学院第十八届大学生数学建模竞赛校级三等级</li>
-            <li>2024年10月 2024第七届“外教社杯”全国高校学生跨文化能力大赛（浙江赛区）校级三等级</li>
-            <li>2024年12月 学业优秀二等奖学金</li>
-            <li>2024年12月 2024第十六届全国大学生数学竞赛（非数学A类）三等奖</li>
-            <li>2024年12月 2024浙江省大学生物理创新（理论）竞赛省级二等奖</li>
-            <li>2025年4月 美国大学生数学建模竞赛成功参赛奖</li>
-            <li>2025年5月 “正大杯”第十五届全国大学生市场调查与分析大赛省级三等级</li>
-        </ul>
-        <li>荣誉</li>
-        <ul>
-            <li>2024年12月 2024浙江省大学生物理创新（理论）竞赛省级二等奖</li>
-        </ul>
-    </ul>
-
-    <h2 id="research">科研成果</h2>
-    <ul>
-        
-        </ul>
-            <li>发表论文</li>
+            <h2 id="research">科研成果</h2>
             <ul>
-                <li><em>《基于深度学习的图像识别研究》</em></li>
+                <li><strong>发表论文</strong></li>
+                <ul>
+                    <li>2024年8月 发表SAE期刊论文《LDFA：Lightweight Dynamic Feature Aggregation for Multi-modal Fusion》1篇（通讯作者）</li>
+                </ul>
+                
+                <li><strong>专利</strong></li>
+                <ul>
+                    <li>一种基于计算机的图像处理去噪系统及方法。（第三发明人）（专利公开号：CN118840562A）</li>
+                </ul>
+                
+                <li><strong>软件著作权</strong></li>
+                <ul>
+                    <li>机器加工视觉对位系统V1.0（登记号：2024SR2134060）</li>
+                </ul>
+                
             </ul>
-        
-            <ul>
-                <li>2024年10月 学分绩点4.4/4.5，排名专业第一</li>
-        </ul>
-    </ul>
-    
-    <h2 id="courses">所学课程</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>课程名称</th>
-                <th>成绩</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>高等数学A1</td>
-                <td>92</td>
-            </tr>
-            <tr>
-                <td>大学物理A1</td>
-                <td>88</td>
-            </tr>
-            <tr>
-                <td>线性代数A1</td>
-                <td>91</td>
-            </tr>
-            <tr>
-                <td>数据结构与算法</td>
-                <td>89</td>
-            </tr>
-            <tr>
-                <td>计算机网络</td>
-                <td>90</td>
-            </tr>
 
-    </table>
-    
-    <aside>
-    <h2>新闻推荐</h2>
-    <p>巴拉巴拉巴拉</p>
-    </aside>
-    </body>
+            <h2 id="courses">所学课程</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>课程名称</th>
+                        <th>成绩</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>高等数学A1</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>大学物理A1</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>线性代数A1</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>数据结构与算法</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>计算机网络</td>
+                        <td>60</td>
+                    </tr>
+
+            </table>
+
+        </div>
+        <aside>
+            <h2>新闻推荐</h2>
+            <p>巴拉巴拉巴拉</p>
+        </aside>
+    </main>
+</body>
+
 </html>

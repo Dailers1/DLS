@@ -3,27 +3,63 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @import url(style.css);
+        </style>
         <title>DLS</title>
     </head>
     <body>
-        <table>
-            <tr>
-                <td>
-                    <a href="about.html" target="_blank" rel="noopener">关于我</a>
-                </td>
-                <td>
-                    <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
-                </td>
-                <td>
-                    <a href="contact.html" target="_blank" rel="noopener">联系我</a>
-                </td>
-            </tr>
-            <tr></tr>
-        </table>
-        <h2>
-            我是段林帅，我在上暑假短学期。
-        </h2>
+        <div class="header">
+            <div class="logo">
+                <img src="images/蓝字横版组合.png" alt="DLS-Logo">  
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="about.html" target="_blank" rel="noopener">关于我</a>
+                    </li>
+                    <li>
+                            <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" target="_blank" rel="noopener">联系我</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main class="main-layout">
+            <div class="main-content">
+                <h1>欢迎来到段林帅的个人网站</h1>
+                <p>我是段林帅，计算机科学与技术专业的学生，正在上暑假短学期。</p>
+                
+                <section>
+                    <h2>我的技能</h2>
+                    <ul>
+                        <li>编程语言：Python, Java, C++</li>
+                        <li>前端技术：HTML, CSS, JavaScript</li>
+                        <li>机器学习：深度学习，计算机视觉</li>
+                        <li>项目经验：多个国家级和校级创新项目</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h2>最新动态</h2>
+                    <p>目前正在参与多个研究项目，包括基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究等。</p>
+                </section>
+            </div>
+            
+            <aside>
+                <h2>快速链接</h2>
+                <ul>
+                    <li><a href="about.html">查看我的详细简历</a></li>
+                    <li><a href="portfolio.html">浏览我的项目作品</a></li>
+                    <li><a href="contact.html">联系我</a></li>
+                </ul>
+                
+                <h2>联系方式</h2>
+                <p>邮箱：3413571766@qq.com</p>
+                <p>电话：13800138000</p>
+            </aside>
+        </main>
     </body>
-
-</body>
 </html>
