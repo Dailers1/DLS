@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url(style.css);
+        .base-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
     </style>
     <title>DLS-About</title>
 </head>
@@ -48,13 +57,18 @@
                 </header>
             </article>
 
-            <section>
-                <h2 id="base">基本信息</h2>
-                <p>姓名：段林帅</p>
-                <p>年龄：20</p>
-                <p>专业：计算机科学与技术</p>
-                <img src="images/头像.jpg" alt="这是DLS的头像">
-            </section>
+            <div class="base-info">
+                <div class="base-info-content">
+                    <h2 id="base">基本信息</h2>
+                    <p>姓名：段林帅</p>
+                    <p>年龄：20</p>
+                    <p>专业：计算机科学与技术</p>
+                </div>
+                <div class="base-info-image">
+                    <img src="images/头像.jpg" alt="这是DLS的头像" width="200" height="100">
+                </div>
+            </div>
+
 
             <h2 id="project">项目经历</h2>
             <ul>
@@ -82,7 +96,7 @@
                 </ul>
                 <li>荣誉</li>
                 <ul>
-                    <li>市级优秀志愿者</li>
+                    <li>省级优秀志愿者</li>
                 </ul>
             </ul>
 
@@ -102,11 +116,12 @@
                 <ul>
                     <li>机器加工视觉对位系统V1.0（登记号：2024SR2134060）</li>
                 </ul>
-                
-                <li><strong>学业成绩</strong></li>
+
+                <li><strong>学业成果</strong></li>
                 <ul>
                     <li>GPA:3.89/4.00</li>
                 </ul>
+                
             </ul>
 
             <h2 id="courses">所学课程</h2>
@@ -150,5 +165,3 @@
 </body>
 
 </html>
-
-
