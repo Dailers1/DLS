@@ -12,99 +12,167 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img src="images/蓝字横版组合.png" alt="DLS-Logo">  
+            <img src="images/蓝字横版组合.png" alt="DLS-Logo">
         </div>
         <div class="nav">
             <ul>
                 <li>
+                    <a href="index.html" target="_blank rel="noopemer>首页</a>
+                </li>
+                <li>
                     <a href="about.html" target="_blank" rel="noopener">关于我</a>
                 </li>
                 <li>
-                        <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
+                    <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
                 </li>
                 <li>
                     <a href="contact.html" target="_blank" rel="noopener">联系我</a>
                 </li>
+                <li>
+                    <button id="themeToggle" class="theme-toggle" aria-label="切换主题">☀️</button>
+                </li>
             </ul>
         </div>
     </div>
-    <!-- 邮件链接 -->
-    <div class="contact-info">
-        <p><a href="mailto:3413571766@qq.com">邮箱：3413571766@qq.com</a></p>
-        <p><a href="tel:+8618363567977">电话：18363567977</a></p>
-    </div>
 
-    <!-- 电话链接 -->
+    <!-- Hero -->
+    <section class="contact-hero">
+        <h1>联系我</h1>
+        <p>有合作、项目、学习交流，或者只是想打个招呼，欢迎通过以下方式联系我。</p>
+    </section>
 
+    <!-- Two-column layout -->
+    <main class="contact-grid">
+        <!-- Left: form -->
+        <section class="contact-card">
+            <h2>发送消息</h2>
+            <form class="contact-form" action="#" method="post" novalidate>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+                        <small class="hint">必填</small>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                        <small class="hint">用于接收回复</small>
+                    </div>
+                </div>
 
-    <!-- 联系表单 -->
-    <form action="https://www.baidu.com" method="post">
-        <fieldset>
-            <legend>联系我</legend>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="phone">电话</label>
+                        <input type="tel" id="phone" name="phone" placeholder="请输入您的电话号码">
+                    </div>
+                    <div class="form-field">
+                        <label for="country">国家/地区</label>
+                        <select id="country" name="country">
+                            <option value="">请选择</option>
+                            <option value="china" selected>中国</option>
+                            <option value="usa">美国</option>
+                            <option value="uk">英国</option>
+                            <option value="japan">日本</option>
+                        </select>
+                    </div>
+                </div>
 
-            <!-- 文本输入：姓名 -->
-            <label for="name">姓名：</label>
-            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required><br><br>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>性别</label>
+                        <div class="radios">
+                            <label><input type="radio" name="gender" value="male"> 男</label>
+                            <label><input type="radio" name="gender" value="female"> 女</label>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label>兴趣爱好</label>
+                        <div class="checkboxes">
+                            <label><input type="checkbox" name="hobbies" value="reading"> 阅读</label>
+                            <label><input type="checkbox" name="hobbies" value="sports"> 运动</label>
+                            <label><input type="checkbox" name="hobbies" value="music"> 音乐</label>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- 邮箱输入 -->
-            <label for="email">邮箱：</label>
-            <input type="email" id="email" name="email" placeholder="请输入您的邮箱"><br><br>
+                <div class="form-field">
+                    <label for="message">留言</label>
+                    <textarea id="message" name="message" rows="6" placeholder="请详细描述您的需求或想法..."></textarea>
+                </div>
 
-            <!-- 电话输入 -->
-            <label for="phone">电话：</label>
-            <input type="tel" id="phone" name="phone" placeholder="请输入您的电话号码"><br><br>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="file">上传附件（可选）</label>
+                        <input type="file" id="file" name="file">
+                    </div>
+                </div>
 
-            <!-- 单选框：性别 -->
-            <label>性别：</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">男</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">女</label><br><br>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">发送</button>
+                    <button type="reset" class="btn">重置</button>
+                </div>
+            </form>
+        </section>
 
-            <!-- 多选框：兴趣 -->
-            <label>兴趣爱好：</label>
-            <input type="checkbox" id="reading" name="hobbies" value="reading">
-            <label for="reading">阅读</label>
-            <input type="checkbox" id="sports" name="hobbies" value="sports">
-            <label for="sports">运动</label>
-            <input type="checkbox" id="music" name="hobbies" value="music">
-            <label for="music">音乐</label><br><br>
+        <!-- Right: contact info + map -->
+        <aside class="contact-aside">
+            <section class="contact-card">
+                <h2>联系信息</h2>
+                <ul class="contact-list">
+                    <li><a href="mailto:3413571766@qq.com">📧 3413571766@qq.com</a></li>
+                    <li><a href="tel:+8618363567977">📞 183 6356 7977</a></li>
+                    <li>📍 浙江·杭州</li>
+                </ul>
+            </section>
 
-            <!-- 下拉选择框 -->
-            <label for="country">国家：</label>
-            <select id="country" name="country">
-                <option value="">请选择</option>
-                <option value="china" selected>中国</option>
-                <option value="usa">美国</option>
-                <option value="uk">英国</option>
-                <option value="japan">日本</option>
-            </select><br><br>
-
-            <!-- 文本域：留言 -->
-            <label for="message">留言：</label><br>
-            <textarea id="message" name="message" rows="5" cols="40" placeholder="请输入您的留言"></textarea><br><br>
-
-            <!-- 文件上传 -->
-            <label for="file">上传文件：</label>
-            <input type="file" id="file" name="file"><br><br>
-
-            <!-- 提交按钮 -->
-            <button type="submit" class="submit-btn">提交表单</button>
-            <button type="reset">重置</button>
-        </fieldset>
-    </form>
-
-    <!-- 嵌入地图（以百度地图为例） -->
-    <h3>我们的位置</h3>
-    <div class="map-container">
-        <iframe 
-            src="https://map.baidu.com/@12959100,4823850,12z" 
-            width="30%" 
-            height="400" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </div>
+            <section class="contact-card map-card">
+                <h2>我们的位置</h2>
+                <div class="responsive-map">
+                    <iframe
+                        src="https://map.baidu.com/@12959100,4823850,12z"
+                        style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+        </aside>
+    </main>
 </body>
+<script>
+    // 主题切换功能
+    const themeToggle = document.getElementById('themeToggle');
+
+    // 检查本地存储中的主题设置
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // 根据当前主题设置按钮图标
+    function updateThemeIcon() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        themeToggle.textContent = isDark ? '🌙' : '☀️';
+    }
+
+    // 初始化按钮图标
+    updateThemeIcon();
+
+    // 主题切换事件
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        // 应用新主题
+        document.documentElement.setAttribute('data-theme', newTheme);
+
+        // 保存到本地存储
+        localStorage.setItem('theme', newTheme);
+
+        // 更新按钮图标
+        updateThemeIcon();
+
+        // 添加点击反馈
+        themeToggle.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'scale(1)';
+        }, 150);
+    });
+</script>
 </html>
