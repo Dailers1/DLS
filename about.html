@@ -6,17 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         @import url(style.css);
-        .base-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-        }
     </style>
     <title>DLS-About</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -27,6 +21,9 @@
         <div class="nav">
             <ul>
                 <li>
+                    <a href="index.html" target="_blank rel=" noopemer>首页</a>
+                </li>
+                <li>
                     <a href="about.html" target="_blank" rel="noopener">关于我</a>
                 </li>
                 <li>
@@ -35,133 +32,800 @@
                 <li>
                     <a href="contact.html" target="_blank" rel="noopener">联系我</a>
                 </li>
+                <li>
+                    <button id="themeToggle" class="theme-toggle" aria-label="切换主题">☀️</button>
+                </li>
             </ul>
         </div>
     </div>
-    <h1>段林帅的个人简历</h1>
+    <div class="about-content">
+        <h1>段林帅的个人简历</h1>
+    </div>
 
     <main class="main-layout">
-        <div class="main-content">
-            <article>
-                <header>
-                    <h2>目录</h2>
-                    <nav>
-                        <ul>
-                            <li><a href="#base">基本信息</a></li>
-                            <li><a href="#project">项目经历</a></li>
-                            <li><a href="#honor">荣誉及奖惩</a></li>
-                            <li><a href="#research">科研成果</a></li>
-                            <li><a href="#courses">所学课程</a></li>
-                        </ul>
-                    </nav>
-                </header>
-            </article>
-
-            <div class="base-info">
-                <div class="base-info-content">
-                    <h2 id="base">基本信息</h2>
-                    <p>姓名：段林帅</p>
-                    <p>年龄：20</p>
-                    <p>专业：计算机科学与技术</p>
+        <!-- 左上侧信息区域 -->
+        <div class="left-sidebar">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <img src="images/头像.jpg" alt="这是DLS的头像" class="profile-avatar">
+                    <h3>段林帅</h3>
+                    <p class="profile-title">浙大城市学院 · 计算机科学与技术</p>
                 </div>
-                <div class="base-info-image">
-                    <img src="images/头像.jpg" alt="这是DLS的头像" width="200" height="100">
+
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">20</span>
+                        <span class="stat-label">年龄</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3.89</span>
+                        <span class="stat-label">GPA</span>
+                    </div>
                 </div>
             </div>
 
+            <div class="skills-card">
+                <h3>编程技能</h3>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">C/C++</span>
+                        <span class="about-skill-level">85%</span>
+                    </div>
+                    <div class="about-skill-bar">
+                        <div class="about-skill-progress" data-level="85" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="about-skill-level">25%</span>
+                    </div>
+                    <div class="about-skill-bar">
+                        <div class="about-skill-progress" data-level="25" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">Python</span>
+                        <span class="about-skill-level">75%</span>
+                    </div>
+                    <div class="about-skill-bar">
+                        <div class="about-skill-progress" data-level="75" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span class="skill-name">HTML/CSS</span>
+                        <span class="about-skill-level">50%</span>
+                    </div>
+                    <div class="about-skill-bar">
+                        <div class="about-skill-progress" data-level="50" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
 
-            <h2 id="project">项目经历</h2>
-            <ul>
-                <li>2024<strong>国创（参与）</strong>：《基于点云神经网络的脑疾病纤维拓扑结构识别方法研究》（未结题）</li>
-                <li>2024校创（主持）：《“智能驭行”--基于多模态增量学习的自动驾驶智能感知研究》<strong>（优秀结题）</strong></li>
-                <li>2025<strong>国创（主持）</strong>：《基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究》（未结题）</li>
-                <li>2025省创（参与）：《面向具身智能的视触觉持续学习及应用研究》（未结题）</li>
-                <li>2025省创（参与）：《杭州西湖旅游活动对水质影响的量化分析与可持续策略研究》（未结题）</li>
-                <li>2025校创（参与）：《草木含情，茶润身心》（商学院项目，未结题）</li>
-            </ul>
-
-            <h2 id="honor">荣誉及奖惩</h2>
-            <ul>
-                <li>奖项</li>
-                <ul>
-                    <li>2023年11月 2023浙大城市学院高等数学（微积分）竞赛成功参与奖</li>
-                    <li>2024年5月 2024年浙大城市学院第十八届大学生数学建模竞赛校级三等级</li>
-                    <li>2024年10月 2024第七届“外教社杯”全国高校学生跨文化能力大赛（浙江赛区）校级三等级</li>
-                    <li>2024年12月 学业优秀二等奖学金</li>
-                    <li>2024年12月 2024第十六届全国大学生数学竞赛（非数学A类）三等奖</li>
-                    <li>2024年12月 2024浙江省大学生物理创新（理论）竞赛省级二等奖</li>
-                    <li>2025年4月 美国大学生数学建模竞赛成功参赛奖</li>
-                    <li>2025年5月 “正大杯”第十五届全国大学生市场调查与分析大赛省级三等级</li>
-                    <li>2024年12月 2024浙江省大学生物理创新（理论）竞赛省级二等奖</li>
-                </ul>
-                <li>荣誉</li>
-                <ul>
-                    <li>省级优秀志愿者</li>
-                </ul>
-            </ul>
-
-            <h2 id="research">科研成果</h2>
-            <ul>
-                <li><strong>发表论文</strong></li>
-                <ul>
-                    <li>2024年8月 发表SAE期刊论文《LDFA：Lightweight Dynamic Feature Aggregation for Multi-modal Fusion》1篇（通讯作者）</li>
-                </ul>
-                
-                <li><strong>专利</strong></li>
-                <ul>
-                    <li>一种基于计算机的图像处理去噪系统及方法。（第三发明人）（专利公开号：CN118840562A）</li>
-                </ul>
-                
-                <li><strong>软件著作权</strong></li>
-                <ul>
-                    <li>机器加工视觉对位系统V1.0（登记号：2024SR2134060）</li>
-                </ul>
-
-                <li><strong>学业成果</strong></li>
-                <ul>
-                    <li>GPA:3.89/4.00</li>
-                </ul>
-                
-            </ul>
-
-            <h2 id="courses">所学课程</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>课程名称</th>
-                        <th>成绩</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>高等数学A1</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>大学物理A1</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>线性代数A1</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>数据结构与算法</td>
-                        <td>60</td>
-                    </tr>
-                    <tr>
-                        <td>计算机网络</td>
-                        <td>60</td>
-                    </tr>
-
-            </table>
-
+            <div class="radar-chart-card">
+                <h3>技能雷达图</h3>
+                <div class="chart-wrapper">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+            </div>
         </div>
-        <aside>
-            <h2>新闻推荐</h2>
-            <p>巴拉巴拉巴拉</p>
-        </aside>
+
+        <!-- 主要内容区域 -->
+        <div class="main-content">
+            <!-- 导航目录 -->
+            <nav class="page-navigation">
+                <h2>页面导航</h2>
+                <ul>
+                    <li><a href="#project">项目经历</a></li>
+                    <li><a href="#honor">荣誉及奖惩</a></li>
+                    <li><a href="#research">科研成果</a></li>
+                    <li><a href="#courses">所学课程</a></li>
+                    <li><a href="#timeline">人生时间轴</a></li>
+                    <li><a href="#travel">我的足迹</a></li>
+                </ul>
+            </nav>
+
+            <!-- 项目经历 -->
+            <section id="project" class="content-section project-section">
+                <div class="section-header">
+                    <h2>项目经历</h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card featured">
+                        <div class="project-badge">国创项目</div>
+                        <h3>基于点云神经网络的脑疾病纤维拓扑结构识别方法研究</h3>
+                        <p class="project-year">2024年</p>
+                        <p class="project-status ongoing">进行中</p>
+                        <p class="project-role">参与</p>
+                    </div>
+                    <div class="project-card completed">
+                        <div class="project-badge">校创项目</div>
+                        <h3>"智能驭行"--基于多模态增量学习的自动驾驶智能感知研究</h3>
+                        <p class="project-year">2024年</p>
+                        <p class="project-status completed">优秀结题</p>
+                        <p class="project-role">主持</p>
+                    </div>
+                    <div class="project-card featured">
+                        <div class="project-badge">国创项目</div>
+                        <h3>基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究</h3>
+                        <p class="project-year">2025年</p>
+                        <p class="project-status ongoing">进行中</p>
+                        <p class="project-role">主持</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-badge">省创项目</div>
+                        <h3>面向具身智能的视触觉持续学习及应用研究</h3>
+                        <p class="project-year">2025年</p>
+                        <p class="project-status ongoing">进行中</p>
+                        <p class="project-role">参与</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-badge">省创项目</div>
+                        <h3>杭州西湖旅游活动对水质影响的量化分析与可持续策略研究</h3>
+                        <p class="project-year">2025年</p>
+                        <p class="project-status ongoing">进行中</p>
+                        <p class="project-role">参与</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-badge">校创项目</div>
+                        <h3>草木含情，茶润身心</h3>
+                        <p class="project-year">2025年</p>
+                        <p class="project-status ongoing">进行中</p>
+                        <p class="project-role">参与</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 荣誉及奖惩 -->
+            <section id="honor" class="content-section honor-section">
+                <div class="section-header">
+                    <h2>荣誉及奖惩</h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="honor-content">
+                    <div class="honor-category">
+                        <h3>🏆 竞赛奖项</h3>
+                        <div class="honor-list">
+                            <div class="honor-item">
+                                <span class="honor-date">2023.11</span>
+                                <span class="honor-title">浙大城市学院高等数学竞赛成功参与奖</span>
+                            </div>
+                            <div class="honor-item">
+                                <span class="honor-date">2024.05</span>
+                                <span class="honor-title">第十八届大学生数学建模竞赛校级三等奖</span>
+                            </div>
+                            <div class="honor-item">
+                                <span class="honor-date">2024.10</span>
+                                <span class="honor-title">第七届"外教社杯"全国高校学生跨文化能力大赛校级三等奖</span>
+                            </div>
+                            <div class="honor-item">
+                                <span class="honor-date">2024.12</span>
+                                <span class="honor-title">第十六届全国大学生数学竞赛（非数学A类）三等奖</span>
+                            </div>
+                            <div class="honor-item">
+                                <span class="honor-date">2024.12</span>
+                                <span class="honor-title">浙江省大学生物理创新（理论）竞赛省级二等奖</span>
+                            </div>
+                            <div class="honor-item">
+                                <span class="honor-date">2025.04</span>
+                                <span class="honor-title">美国大学生数学建模竞赛成功参赛奖</span>
+                            </div>
+                            <div class="honor-item">
+                                <span class="honor-date">2025.05</span>
+                                <span class="honor-title">"正大杯"第十五届全国大学生市场调查与分析大赛省级三等奖</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="honor-category">
+                        <h3>💰 奖学金</h3>
+                        <div class="honor-list">
+                            <div class="honor-item">
+                                <span class="honor-date">2024.12</span>
+                                <span class="honor-title">学业优秀二等奖学金</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="honor-category">
+                        <h3>🌟 荣誉称号</h3>
+                        <div class="honor-list">
+                            <div class="honor-item">
+                                <span class="honor-title">省级优秀志愿者</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 科研成果 -->
+            <section id="research" class="content-section research-section">
+                <div class="section-header">
+                    <h2>科研成果</h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="research-grid">
+                    <div class="research-card paper">
+                        <div class="research-icon">📄</div>
+                        <h3>发表论文</h3>
+                        <div class="research-item">
+                            <p class="research-title">LDFA：Lightweight Dynamic Feature Aggregation for Multi-modal
+                                Fusion</p>
+                            <p class="research-details">SAE期刊论文 · 2024年8月 · 通讯作者</p>
+                        </div>
+                    </div>
+                    <div class="research-card patent">
+                        <div class="research-icon">🔬</div>
+                        <h3>专利</h3>
+                        <div class="research-item">
+                            <p class="research-title">一种基于计算机的图像处理去噪系统及方法</p>
+                            <p class="research-details">第三发明人 · 专利公开号：CN118840562A</p>
+                        </div>
+                    </div>
+                    <div class="research-card software">
+                        <div class="research-icon">💻</div>
+                        <h3>软件著作权</h3>
+                        <div class="research-item">
+                            <p class="research-title">机器加工视觉对位系统V1.0</p>
+                            <p class="research-details">登记号：2024SR2134060</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 所学课程 -->
+            <section id="courses" class="content-section courses-section">
+                <div class="section-header">
+                    <h2>所学课程</h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <h3>高等数学A1</h3>
+                        <div class="course-score">60</div>
+                    </div>
+                    <div class="course-card">
+                        <h3>大学物理A1</h3>
+                        <div class="course-score">60</div>
+                    </div>
+                    <div class="course-card">
+                        <h3>线性代数A1</h3>
+                        <div class="course-score">60</div>
+                    </div>
+                    <div class="course-card">
+                        <h3>数据结构与算法</h3>
+                        <div class="course-score">60</div>
+                    </div>
+                    <div class="course-card">
+                        <h3>计算机网络</h3>
+                        <div class="course-score">60</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 人生时间轴 -->
+            <section id="timeline" class="content-section timeline-section">
+                <div class="section-header">
+                    <h2>人生时间轴</h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="timeline-scroll-container">
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+
+                        <!-- 时间节点 -->
+                        <div class="timeline-item" data-year="2005" data-title="魔童降世"
+                            data-description="完成初步发育，开始地球Online">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>魔童降世</h3>
+                                <p class="timeline-date">2005年2月</p>
+                                <p class="timeline-brief">完成初步发育，开始地球Online</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>魔童降世</h4>
+                                <p>在2005年，我完成了初步发育，开始地球Online。</p>
+                                <img src="images/魔童降世.png" alt="魔童降世"
+                                    style="max-width: 200px; border-radius: 8px; cursor: pointer;"
+                                    onclick="window.open('images/魔童降世.png', '_blank')">
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2011" data-title="步入小学"
+                            data-description="完成幼儿园学位，开始小学学习开始小学学习">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>步入小学</h3>
+                                <p class="timeline-date">2011年9月</p>
+                                <p class="timeline-brief">小学学习开始</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>步入小学</h4>
+                                <p>在2005年，我完成了初步发育，开始地球Online。</p>
+                                <img src="images/xiaoxue.png" alt="xiaoxue"
+                                    style="max-width: 200px; border-radius: 8px; cursor: pointer;"
+                                    onclick="window.open('images/xiaoxue.png', '_blank')">
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2020" data-title="高中毕业" data-description="完成高中学业，开始大学生活">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>高中毕业</h3>
+                                <p class="timeline-date">2020年</p>
+                                <p class="timeline-brief">完成高中学业，开始大学生活</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>高中毕业</h4>
+                                <p>在高中阶段，我专注于数学和物理的学习，为未来的计算机科学专业打下坚实基础。</p>
+                                <img src="images/graduation.jpg" alt="毕业照片"
+                                    style="max-width: 200px; border-radius: 8px;">
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2021" data-title="进入大学" data-description="开始计算机科学与技术专业学习">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>进入大学</h3>
+                                <p class="timeline-date">2021年</p>
+                                <p class="timeline-brief">开始计算机科学与技术专业学习</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>大学生活开始</h4>
+                                <p>进入浙大城市学院，开始系统学习计算机科学知识，包括编程基础、数据结构等核心课程。</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2023" data-title="参与竞赛" data-description="开始参加各类学科竞赛">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>参与竞赛</h3>
+                                <p class="timeline-date">2023年</p>
+                                <p class="timeline-brief">开始参加各类学科竞赛</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>竞赛经历</h4>
+                                <p>参加数学建模竞赛、物理竞赛等，获得多项荣誉，提升了实践能力和团队协作能力。</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2024" data-title="项目开发" data-description="开始参与科研项目和软件开发">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>项目开发</h3>
+                                <p class="timeline-date">2024年</p>
+                                <p class="timeline-brief">开始参与科研项目和软件开发</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>科研项目</h4>
+                                <p>参与国创项目，发表SAE期刊论文，获得软件著作权，在学术研究方面取得重要进展。</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2025" data-title="未来规划" data-description="继续深造，追求更高目标">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>未来规划</h3>
+                                <p class="timeline-date">2025年</p>
+                                <p class="timeline-brief">继续深造，追求更高目标</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>展望未来</h4>
+                                <p>计划继续攻读研究生，深入研究人工智能和计算机视觉领域，为科技发展贡献力量。</p>
+                            </div>
+                        </div>
+
+                        <!-- 添加更多时间节点以展示滑动效果 -->
+                        <div class="timeline-item" data-year="2026" data-title="研究生学习" data-description="开始研究生阶段的学习和研究">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>研究生学习</h3>
+                                <p class="timeline-date">2026年</p>
+                                <p class="timeline-brief">开始研究生阶段的学习和研究</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>深造之路</h4>
+                                <p>进入研究生阶段，深入研究人工智能和计算机视觉领域的前沿技术。</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2027" data-title="学术研究" data-description="在学术研究领域取得重要突破">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>学术研究</h3>
+                                <p class="timeline-date">2027年</p>
+                                <p class="timeline-brief">在学术研究领域取得重要突破</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>研究成果</h4>
+                                <p>在顶级期刊发表多篇论文，参与国际会议，与全球顶尖学者交流合作。</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-year="2028" data-title="职业发展" data-description="开始职业生涯，为社会贡献力量">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>职业发展</h3>
+                                <p class="timeline-date">2028年</p>
+                                <p class="timeline-brief">开始职业生涯，为社会贡献力量</p>
+                            </div>
+                            <div class="timeline-detail">
+                                <h4>职场启程</h4>
+                                <p>进入知名企业或研究机构，将所学知识应用到实际工作中，推动科技进步。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-scroll-hint">
+                    <span>← 左右滑动查看更多 →</span>
+                </div>
+            </section>
+
+            <!-- 我的足迹 -->
+            <section id="travel" class="content-section travel-section">
+                <div class="section-header">
+                    <h2>我的足迹</h2>
+                    <div class="section-decoration"></div>
+                </div>
+                <div class="travel-content">
+                    <div class="map-container">
+                        <div id="travelMap" style="height: 400px; width: 100%; border-radius: 12px; overflow: hidden;">
+                        </div>
+                    </div>
+                    <div class="travel-stories">
+                        <h3>旅行故事</h3>
+                        <div class="story-grid">
+                            <div class="story-card" data-city="杭州">
+                                <h4>杭州 - 西湖之美</h4>
+                                <p>在杭州求学期间，经常漫步西湖，感受"人间天堂"的诗意与浪漫。</p>
+                            </div>
+                            <div class="story-card" data-city="北京">
+                                <h4>北京 - 古都风韵</h4>
+                                <p>游览故宫、长城，感受中华文明的深厚底蕴和历史厚重感。</p>
+                            </div>
+                            <div class="story-card" data-city="上海">
+                                <h4>上海 - 现代都市</h4>
+                                <p>体验外滩夜景，感受国际化大都市的繁华与活力。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 </body>
+<script>
+    // 主题切换功能
+    const themeToggle = document.getElementById('themeToggle');
+
+    // 检查本地存储中的主题设置
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // 根据当前主题设置按钮图标
+    function updateThemeIcon() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        themeToggle.textContent = isDark ? '🌙' : '☀️';
+    }
+
+    // 初始化按钮图标
+    updateThemeIcon();
+
+    // 主题切换事件
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        // 应用新主题
+        document.documentElement.setAttribute('data-theme', newTheme);
+
+        // 保存到本地存储
+        localStorage.setItem('theme', newTheme);
+
+        // 更新按钮图标
+        updateThemeIcon();
+
+        // 添加点击反馈
+        themeToggle.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'scale(1)';
+        }, 150);
+    });
+
+    // 创建技能雷达图
+    document.addEventListener('DOMContentLoaded', () => {
+        const ctx = document.getElementById('skillsChart');
+        if (ctx) {
+            const skillsChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['C/C++', 'JavaScript', 'Python', 'HTML/CSS', '数据结构', '算法设计'],
+                    datasets: [{
+                        label: '技能水平',
+                        data: [85, 80, 75, 60, 80, 70], // 对应你的技能水平
+                        backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(52, 152, 219, 1)',
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 100,
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 20,
+                                callback: function (value) {
+                                    return value + '%';
+                                }
+                            },
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.parsed.r + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            console.log('🎯 技能雷达图已创建');
+        } else {
+            console.error('❌ 未找到雷达图画布元素');
+        }
+
+        // 技能进度条动态增长效果
+        const skillProgressBars = document.querySelectorAll('.about-skill-progress');
+
+        console.log('🎯 找到技能进度条数量:', skillProgressBars.length);
+
+        // 创建观察器来触发动画
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const targetLevel = progressBar.getAttribute('data-level');
+
+                    console.log('📊 技能进度条进入视口:', targetLevel + '%');
+
+                    // 检查是否已经播放过动画
+                    if (!progressBar.classList.contains('completed')) {
+                        // 延迟执行动画，创造依次出现的效果
+                        setTimeout(() => {
+                            progressBar.style.width = targetLevel + '%';
+                            progressBar.classList.add('animated');
+
+                            console.log('✨ 开始动画:', targetLevel + '%');
+
+                            // 动画完成后添加完成状态
+                            setTimeout(() => {
+                                progressBar.classList.add('completed');
+                                progressBar.classList.remove('animated');
+                                console.log('✅ 动画完成:', targetLevel + '%');
+                            }, 1500); // 与CSS transition时间匹配
+                        }, Math.random() * 1000); // 随机延迟0-1秒
+                    } else {
+                        console.log('🔄 技能进度条已播放过动画，跳过:', targetLevel + '%');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.5, // 当50%的元素进入视口时触发
+            rootMargin: '0px 0px -50px 0px' // 提前50px触发，创造更好的用户体验
+        });
+
+        // 观察所有技能进度条
+        skillProgressBars.forEach(bar => {
+            skillObserver.observe(bar);
+            console.log('👁️ 开始观察技能进度条:', bar.getAttribute('data-level') + '%');
+        });
+    });
+
+    // 时间轴交互功能
+    document.addEventListener('DOMContentLoaded', () => {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        const timelineContainer = document.querySelector('.timeline-container');
+        const scrollContainer = document.querySelector('.timeline-scroll-container');
+
+        // 滚动观察器，用于触发时间轴动画
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 添加延迟，创造依次出现的效果
+                    const index = Array.from(timelineItems).indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 200); // 每个节点延迟200ms
+                }
+            });
+        }, {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        // 触摸滑动支持
+        let isScrolling = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        // 触摸开始
+        scrollContainer.addEventListener('touchstart', (e) => {
+            isScrolling = true;
+            startX = e.touches[0].pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+        });
+
+        // 触摸移动
+        scrollContainer.addEventListener('touchmove', (e) => {
+            if (!isScrolling) return;
+            e.preventDefault();
+            const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        // 触摸结束
+        scrollContainer.addEventListener('touchend', () => {
+            isScrolling = false;
+        });
+
+        // 鼠标拖动支持
+        let isMouseDown = false;
+        let mouseStartX = 0;
+        let mouseScrollLeft = 0;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            mouseStartX = e.pageX - scrollContainer.offsetLeft;
+            mouseScrollLeft = scrollContainer.scrollLeft;
+            scrollContainer.style.cursor = 'grabbing';
+        });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isMouseDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - mouseStartX) * 2;
+            scrollContainer.scrollLeft = mouseScrollLeft - walk;
+        });
+
+        scrollContainer.addEventListener('mouseup', () => {
+            isMouseDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+
+        scrollContainer.addEventListener('mouseleave', () => {
+            isMouseDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+
+        // 观察所有时间轴项目
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+
+            const dot = item.querySelector('.timeline-dot');
+            const detail = item.querySelector('.timeline-detail');
+
+            // 鼠标悬停效果
+            item.addEventListener('mouseenter', () => {
+                dot.style.transform = 'scale(1.3) translate(-50%, -50%)';
+                dot.style.boxShadow = '0 0 20px rgba(52, 152, 219, 0.6)';
+            });
+
+            item.addEventListener('mouseleave', () => {
+                dot.style.transform = 'scale(1) translate(-50%, -50%)';
+                dot.style.boxShadow = 'none';
+            });
+
+            // 点击展开/收起详细内容
+            item.addEventListener('click', () => {
+                const isExpanded = detail.classList.contains('expanded');
+
+                if (isExpanded) {
+                    detail.classList.remove('expanded');
+                    detail.style.maxHeight = '0';
+                } else {
+                    // 收起其他展开的详情
+                    document.querySelectorAll('.timeline-detail.expanded').forEach(expanded => {
+                        expanded.classList.remove('expanded');
+                        expanded.style.maxHeight = '0';
+                    });
+
+                    // 展开当前详情
+                    detail.classList.add('expanded');
+                    detail.style.maxHeight = detail.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // 添加滑动指示器
+        const updateScrollIndicator = () => {
+            const scrollPercent = scrollContainer.scrollLeft / (scrollContainer.scrollWidth - scrollContainer.clientWidth);
+            const hint = document.querySelector('.timeline-scroll-hint span');
+            if (hint) {
+                if (scrollPercent > 0.1) {
+                    hint.textContent = '← 继续滑动查看更多 →';
+                } else {
+                    hint.textContent = '← 左右滑动查看更多 →';
+                }
+            }
+        };
+
+        scrollContainer.addEventListener('scroll', updateScrollIndicator);
+
+        console.log('🎯 横向时间轴交互功能已初始化');
+    });
+
+    // 旅行地图功能
+    document.addEventListener('DOMContentLoaded', () => {
+        // 城市坐标数据
+        const cities = [
+            { name: '杭州', lat: 30.2741, lng: 120.1551, description: '西湖之美，人间天堂' },
+            { name: '北京', lat: 39.9042, lng: 116.4074, description: '古都风韵，中华文明' },
+            { name: '上海', lat: 31.2304, lng: 121.4737, description: '现代都市，外滩夜景' }
+        ];
+
+        // 初始化地图
+        const map = L.map('travelMap').setView([35.8617, 104.1954], 5);
+
+        // 添加地图图层
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // 添加城市标记
+        cities.forEach(city => {
+            const marker = L.marker([city.lat, city.lng])
+                .addTo(map)
+                .bindPopup(`
+                    <div style="text-align: center;">
+                        <h3>${city.name}</h3>
+                        <p>${city.description}</p>
+                    </div>
+                `);
+
+            // 自定义标记样式
+            marker.on('mouseover', function () {
+                this.openPopup();
+            });
+        });
+
+        console.log('🗺️ 旅行地图已初始化');
+
+        // 旅行故事卡片交互
+        const storyCards = document.querySelectorAll('.story-card');
+        storyCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 10px 25px rgba(0,0,0,0.2)';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            });
+        });
+    });
+</script>
 
 </html>
