@@ -1,104 +1,66 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DLS-Portfolio</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DLS-Portfolio</title>
+        <style>
         @import url(style.css);
-    </style>
-</head>
+        </style>
+    <!-- 引入axios库 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
 
-<body>
-    <div class="header">
-        <div class="logo">
-            <img src="images/蓝字横版组合.png" alt="DLS-Logo">
-        </div>
-        <div class="nav">
+    <body>
+        <div class="header">
+            <div class="logo">
+                <img src="images/蓝字横版组合.png" alt="DLS-Logo">  
+            </div>
+            <div class="nav">
             <ul>
                 <li>
-                    <a href="about.html" target="_blank" rel="noopener">关于我</a>
+                    <a href="index.html" target="_blank rel="noopemer>首页</a>
                 </li>
                 <li>
-                    <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
+                            <a href="about.html" target="_blank" rel="noopener">关于我</a>
                 </li>
                 <li>
-                    <a href="contact.html" target="_blank" rel="noopener">联系我</a>
+                            <a href="portfolio.html" target="_blank" rel="noopener">我的项目</a>
+                </li>
+                <li>
+                            <a href="contact.html" target="_blank" rel="noopener">联系我</a>
+                </li>
+                <li>
+                    <button id="themeToggle" class="theme-toggle" aria-label="切换主题">☀️</button>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div class="projects-grid">
-        <article class="project-card">
-            <header>
-                <h2>基于点云神经网络的脑疾病纤维拓扑结构识别方法研究</h2>
-                <span class="project-tag">国创项目</span>
-            </header>
-            <section>
-                <h3>项目描述</h3>
-                <p>研究基于点云神经网络的脑疾病纤维拓扑结构识别方法，为脑疾病诊断提供新的技术手段。</p>
-            </section>
-            <section>
-                <h3>项目技术</h3>
-                <p>点云处理、深度学习、神经网络、医学图像分析</p>
-            </section>
-            <section>
-                <h3>项目成果</h3>
-                <p>建立了基于点云数据的脑纤维拓扑结构识别模型，提高了识别准确率。</p>
-            </section>
-            <section>
-                <h3>项目链接</h3>
-                <a href="https://github.com/Dailers1/TEST" target="_blank" rel="noopener" class="project-link">查看GitHub</a>
-            </section>
-        </article>
-
-        <article class="project-card">
-            <header>
-                <h2>"智能驭行"--基于多模态增量学习的自动驾驶智能感知研究</h2>
-                <span class="project-tag">校创项目</span>
-            </header>
-            <section>
-                <h3>项目描述</h3>
-                <p>研究多模态增量学习在自动驾驶感知中的应用，提高系统对复杂环境的适应能力。</p>
-            </section>
-            <section>
-                <h3>项目技术</h3>
-                <p>多模态学习、增量学习、计算机视觉、自动驾驶</p>
-            </section>
-            <section>
-                <h3>项目成果</h3>
-                <p>优秀结题，建立了多模态增量学习框架，提升了感知系统的鲁棒性。</p>
-            </section>
-            <section>
-                <h3>项目链接</h3>
-                <a href="https://github.com/Dailers1/TEST" target="_blank" rel="noopener" class="project-link">查看GitHub</a>
-            </section>
-        </article>
-
-        <article class="project-card">
-            <header>
-                <h2>基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究</h2>
-                <span class="project-tag">国创项目</span>
-            </header>
-            <section>
-                <h3>项目描述</h3>
-                <p>研究高空无人机目标检测与跟踪系统，实现轻量化和实时性能的平衡。</p>
-            </section>
-            <section>
-                <h3>项目技术</h3>
-                <p>目标检测、目标跟踪、多模态融合、轻量化网络</p>
-            </section>
-            <section>
-                <h3>项目成果</h3>
-                <p>设计了轻量化的检测跟踪网络，在保证精度的同时显著提升了推理速度。</p>
-            </section>
-            <section>
-                <h3>项目链接</h3>
-                <a href="https://github.com/Dailers1/TEST" target="_blank" rel="noopener" class="project-link">查看GitHub</a>
-            </section>
-        </article>
+    <!-- 项目展示区域 -->
+    <div class="projects-section">
+        <div class="section-header">
+            <h2 id="project">我的GitHub项目</h2>
+        </div>
+        <!-- 语言筛选按钮区域 -->
+        <div id="language-filters" class="language-filters" style="display: none;">
+            <h3>按编程语言筛选</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-language="all">
+                    🌐 全部
+                </button>
+                <!-- 语言筛选按钮将在这里动态生成 -->
+            </div>
+        </div>
+        
+        <div id="projects-grid" class="projects-grid">
+            <!-- 项目卡片将在这里动态生成 -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>正在从GitHub加载项目数据...</p>
+            </div>
+        </div>
     </div>
     <div class="pictures">
         <h2>项目图片介绍</h2>
@@ -112,5 +74,475 @@
         </header>
     </div>
 </body>
+<script>
+    // 主题切换功能
+    const themeToggle = document.getElementById('themeToggle');
+
+    // 检查本地存储中的主题设置
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    // 根据当前主题设置按钮图标
+    function updateThemeIcon() {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        themeToggle.textContent = isDark ? '🌙' : '☀️';
+    }
+
+    // 初始化按钮图标
+    updateThemeIcon();
+
+    // 主题切换事件
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        // 应用新主题
+        document.documentElement.setAttribute('data-theme', newTheme);
+
+        // 保存到本地存储
+        localStorage.setItem('theme', newTheme);
+
+        // 更新按钮图标
+        updateThemeIcon();
+
+        // 添加点击反馈
+        themeToggle.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            themeToggle.style.transform = 'scale(1)';
+        }, 150);
+    });
+
+    // ========================================
+    // GitHub项目动态加载系统
+    // ========================================
+
+    // GitHub API配置
+    const GITHUB_CONFIG = {
+        username: 'Dailers1', // 替换为你的GitHub用户名
+        apiUrl: 'https://api.github.com/users/Dailers1/repos',
+        perPage: 10, // 每页显示的项目数量
+        sortBy: 'updated' // 按更新时间排序
+    };
+
+    // 项目卡片类
+    class ProjectCard {
+        constructor(repoData) {
+            this.repoData = repoData;
+        }
+
+        // 渲染项目卡片
+        render() {
+            const card = document.createElement('article');
+            card.className = 'project-card';
+            
+            // 获取主要编程语言
+            const language = this.repoData.language || '其他';
+            const languageColor = this.getLanguageColor(language);
+            
+            // 格式化日期
+            const createdDate = new Date(this.repoData.created_at).toLocaleDateString('zh-CN');
+            const updatedDate = new Date(this.repoData.updated_at).toLocaleDateString('zh-CN');
+            
+            // 获取仓库大小（MB）
+            const sizeInMB = (this.repoData.size / 1024).toFixed(1);
+            
+            card.innerHTML = `
+            <header>
+                    <h2>
+                        <a href="${this.repoData.html_url}" target="_blank" rel="noopener" class="repo-name">
+                            ${this.repoData.name}
+                        </a>
+                    </h2>
+                    <div class="project-meta">
+                        <span class="project-tag language-tag" style="background-color: ${languageColor}">
+                            ${language}
+                        </span>
+                        <span class="project-tag star-tag">
+                            ${this.repoData.stargazers_count} ⭐
+                        </span>
+                        <span class="project-tag fork-tag">
+                            ${this.repoData.forks_count} 🍴
+                        </span>
+                        <span class="project-tag size-tag">
+                            ${sizeInMB} MB
+                        </span>
+                    </div>
+            </header>
+                <section class="description-section">
+                <h3>项目描述</h3>
+                    <p>${this.repoData.description || '暂无描述'}</p>
+            </section>
+                <section class="info-section">
+                    <h3>项目信息</h3>
+                    <ul>
+                        <li><strong>最后更新：</strong>${updatedDate}</li>
+                        <li><strong>开源协议：</strong>${this.repoData.license?.name || '未指定'}</li>
+                        <li><strong>可见性：</strong>${this.repoData.private ? '私有' : '公开'}</li>
+                    </ul>
+            </section>
+                <section class="links-section">
+                <h3>项目链接</h3>
+                    <div class="project-links">
+                        <a href="${this.repoData.html_url}" target="_blank" rel="noopener" class="project-link">
+                            <span>📁 查看GitHub仓库</span>
+                        </a>
+                        ${this.repoData.homepage ? `
+                            <a href="${this.repoData.homepage}" target="_blank" rel="noopener" class="project-link homepage-link">
+                                <span>🌐 访问项目网站</span>
+                            </a>
+                        ` : ''}
+                    </div>
+            </section>
+            `;
+            
+            return card;
+        }
+
+        // 获取编程语言对应的颜色
+        getLanguageColor(language) {
+            const languageColors = {
+                'JavaScript': '#f1e05a',
+                'Python': '#3572A5',
+                'Java': '#b07219',
+                'C++': '#f34b7d',
+                'C': '#555555',
+                'HTML': '#e34c26',
+                'CSS': '#563d7c',
+                'TypeScript': '#2b7489',
+                'PHP': '#4F5D95',
+                'Ruby': '#701516',
+                'Go': '#00ADD8',
+                'Rust': '#dea584',
+                'Swift': '#ffac45',
+                'Kotlin': '#F18E33',
+                'Scala': '#c22d40',
+                '其他': '#6c757d'
+            };
+            return languageColors[language] || languageColors['其他'];
+        }
+    }
+
+    // GitHub项目管理器
+    class GitHubProjectManager {
+        constructor() {
+            this.projectsGrid = document.getElementById('projects-grid');
+            this.refreshBtn = document.getElementById('refreshBtn');
+            this.languageFilters = document.getElementById('language-filters');
+            this.filterButtons = document.querySelector('.filter-buttons');
+            this.isLoading = false;
+            this.allRepos = []; // 存储所有仓库数据
+            this.currentFilter = 'all'; // 当前筛选状态
+            
+            this.initRefreshButton();
+            this.initFilterSystem();
+        }
+
+        // 初始化刷新按钮
+        initRefreshButton() {
+            if (!this.refreshBtn) return; // 刷新按钮已移除时跳过
+            this.refreshBtn.addEventListener('click', () => {
+                if (!this.isLoading) {
+                    this.refreshProjects();
+                }
+            });
+        }
+
+        // 初始化筛选系统
+        initFilterSystem() {
+            // 使用事件委托处理筛选按钮点击
+            this.filterButtons.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    const language = e.target.dataset.language;
+                    this.filterProjects(language);
+                }
+            });
+        }
+
+        // 刷新项目数据
+        async refreshProjects() {
+            this.refreshBtn.disabled = true;
+            this.refreshBtn.textContent = '🔄 刷新中...';
+            
+            try {
+                await this.loadProjects();
+                this.showSuccessMessage('项目数据已更新！');
+            } catch (error) {
+                console.error('刷新失败:', error);
+            } finally {
+                this.refreshBtn.disabled = false;
+                this.refreshBtn.textContent = '🔄 刷新';
+            }
+        }
+
+        // 筛选项目
+        filterProjects(language) {
+            if (this.currentFilter === language) return;
+            
+            this.currentFilter = language;
+            this.updateFilterButtons(language);
+            
+            const projectCards = this.projectsGrid.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                const cardLanguage = card.dataset.language || '其他';
+                
+                if (language === 'all' || cardLanguage === language) {
+                    // 显示项目卡片
+                    card.classList.remove('filtered-out');
+                    card.classList.add('filtered-in');
+                } else {
+                    // 隐藏项目卡片
+                    card.classList.add('filtered-out');
+                    card.classList.remove('filtered-in');
+                }
+            });
+            
+            // 更新项目计数
+            this.updateProjectCount(language);
+        }
+
+        // 更新筛选按钮状态
+        updateFilterButtons(activeLanguage) {
+            const buttons = this.filterButtons.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.language === activeLanguage) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // 更新项目计数
+        updateProjectCount(language) {
+            const visibleCards = this.projectsGrid.querySelectorAll('.project-card:not(.filtered-out)');
+            const totalCards = this.projectsGrid.querySelectorAll('.project-card').length;
+            
+            let countText = '';
+            if (language === 'all') {
+                countText = `显示全部 ${totalCards} 个项目`;
+            } else {
+                countText = `显示 ${language} 项目 (${visibleCards.length}/${totalCards})`;
+            }
+            
+            // 更新筛选区域标题
+            const filterTitle = this.languageFilters.querySelector('h3');
+            filterTitle.textContent = `按编程语言筛选 - ${countText}`;
+        }
+
+        // 初始化
+        async init() {
+            try {
+                await this.loadProjects();
+            } catch (error) {
+                this.showError('加载项目失败，请稍后重试');
+                console.error('加载项目失败:', error);
+            }
+        }
+
+        // 加载项目数据
+        async loadProjects() {
+            this.isLoading = true;
+            this.showLoading();
+
+            try {
+                const repos = await this.fetchGitHubRepos();
+                this.renderProjects(repos);
+            } catch (error) {
+                throw error;
+            } finally {
+                this.isLoading = false;
+            }
+        }
+
+        // 从GitHub API获取仓库数据 (使用axios)
+        async fetchGitHubRepos() {
+            const url = `${GITHUB_CONFIG.apiUrl}`;
+            const params = {
+                sort: GITHUB_CONFIG.sortBy,
+                per_page: GITHUB_CONFIG.perPage,
+                type: 'owner' // 只获取用户自己的仓库
+            };
+            
+            console.log('🔗 正在连接GitHub API:', url);
+            console.log('📋 请求参数:', params);
+            
+            try {
+                // 使用axios发送请求
+                const response = await axios.get(url, { 
+                    params,
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'User-Agent': 'DLS-Portfolio-App'
+                    },
+                    timeout: 10000 // 10秒超时
+                });
+                
+                console.log('📡 API响应状态:', response.status, response.statusText);
+                console.log('📦 获取到仓库数量:', response.data.length);
+                console.log('📋 仓库列表:', response.data.map(repo => repo.name));
+                
+                // 过滤掉fork的仓库，只显示原创项目
+                const originalRepos = response.data.filter(repo => !repo.fork);
+                console.log('🎯 原创仓库数量:', originalRepos.length);
+                
+                return originalRepos;
+            } catch (error) {
+                console.error('❌ 获取GitHub仓库失败:', error);
+                
+                if (error.response) {
+                    // 服务器响应了错误状态码
+                    const status = error.response.status;
+                    if (status === 404) {
+                        throw new Error(`GitHub用户 '${GITHUB_CONFIG.username}' 不存在`);
+                    } else if (status === 403) {
+                        throw new Error('API请求被限制，请稍后重试');
+                    } else {
+                        throw new Error(`GitHub API错误 (${status}): ${error.response.data?.message || '未知错误'}`);
+                    }
+                } else if (error.request) {
+                    // 请求已发出但没有收到响应
+                    throw new Error('网络连接失败，请检查网络设置');
+                } else {
+                    // 其他错误
+                    throw new Error(`请求配置错误: ${error.message}`);
+                }
+            }
+        }
+
+        // 渲染项目列表
+        renderProjects(repos) {
+            if (!repos || repos.length === 0) {
+                this.showMessage('暂无公开项目');
+                return;
+            }
+
+            // 存储所有仓库数据
+            this.allRepos = repos;
+
+            // 清空加载动画
+            this.projectsGrid.innerHTML = '';
+
+            // 渲染每个项目卡片
+            repos.forEach(repo => {
+                const projectCard = new ProjectCard(repo);
+                const cardElement = projectCard.render();
+                
+                // 为项目卡片添加语言数据属性，用于筛选
+                const language = repo.language || '其他';
+                cardElement.dataset.language = language;
+                
+                this.projectsGrid.appendChild(cardElement);
+            });
+
+            // 生成语言筛选按钮
+            this.generateLanguageFilters(repos);
+        }
+
+        // 生成语言筛选按钮
+        generateLanguageFilters(repos) {
+            // 使用数组高阶函数提取唯一的编程语言
+            const languages = repos
+                .map(repo => repo.language || '其他')
+                .filter((language, index, arr) => arr.indexOf(language) === index)
+                .sort(); // 按字母顺序排序
+
+            console.log('🔍 检测到的编程语言:', languages);
+
+            // 清空现有按钮（保留"全部"按钮）
+            const allButton = this.filterButtons.querySelector('[data-language="all"]');
+            this.filterButtons.innerHTML = '';
+            this.filterButtons.appendChild(allButton);
+
+            // 为每种语言创建筛选按钮
+            languages.forEach(language => {
+                const button = document.createElement('button');
+                button.className = 'filter-btn';
+                button.dataset.language = language;
+                button.textContent = `${this.getLanguageIcon(language)} ${language}`;
+                
+                this.filterButtons.appendChild(button);
+            });
+
+            // 显示筛选区域
+            this.languageFilters.style.display = 'block';
+            
+            // 更新项目计数
+            this.updateProjectCount('all');
+        }
+
+        // 获取编程语言对应的图标
+        getLanguageIcon(language) {
+            const languageIcons = {
+                'JavaScript': '🟡',
+                'Python': '🐍',
+                'Java': '☕',
+                'C++': '🔴',
+                'C': '🔵',
+                'HTML': '🌐',
+                'CSS': '🎨',
+                'TypeScript': '🔷',
+                'PHP': '🐘',
+                'Ruby': '💎',
+                'Go': '🐹',
+                'Rust': '🦀',
+                'Swift': '🍎',
+                'Kotlin': '🟠',
+                'Scala': '🔺',
+                '其他': '📁'
+            };
+            return languageIcons[language] || '📁';
+        }
+
+        // 显示加载状态
+        showLoading() {
+            this.projectsGrid.innerHTML = `
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>正在从GitHub加载项目数据...</p>
+                </div>
+            `;
+        }
+
+        // 显示错误信息
+        showError(message) {
+            this.projectsGrid.innerHTML = `
+                <div class="error-message">
+                    <p>❌ ${message}</p>
+                    <button onclick="location.reload()" class="retry-btn">重试</button>
+                </div>
+            `;
+        }
+
+        // 显示提示信息
+        showMessage(message) {
+            this.projectsGrid.innerHTML = `
+                <div class="message">
+                    <p>ℹ️ ${message}</p>
+                </div>
+            `;
+        }
+
+        // 显示成功消息
+        showSuccessMessage(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.innerHTML = `<p>✅ ${message}</p>`;
+            
+            // 在项目网格上方显示成功消息
+            this.projectsGrid.parentNode.insertBefore(successDiv, this.projectsGrid);
+            
+            // 3秒后自动隐藏
+            setTimeout(() => {
+                successDiv.remove();
+            }, 3000);
+        }
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', () => {
+        const projectManager = new GitHubProjectManager();
+        projectManager.init();
+    });
+</script>
 
 </html>
