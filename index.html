@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             @import url(style.css);
         </style>
-        <title>DLS</title>
+        <title>DLS - 段林帅的个人网站</title>
     </head>
+
     <body>
         <div class="header">
             <div class="logo">
@@ -15,6 +17,9 @@
             </div>
             <div class="nav">
                 <ul>
+                    <li>
+                        <a href="index.html" target="_blank rel="noopemer>首页</a>
+                    </li>
                     <li>
                         <a href="about.html" target="_blank" rel="noopener">关于我</a>
                     </li>
@@ -24,42 +29,630 @@
                     <li>
                         <a href="contact.html" target="_blank" rel="noopener">联系我</a>
                     </li>
+                <li>
+                    <button id="themeToggle" class="theme-toggle" aria-label="切换主题">☀️</button>
+                </li>
                 </ul>
             </div>
         </div>
-        <main class="main-layout">
-            <div class="main-content">
-                <h1>欢迎来到段林帅的个人网站</h1>
-                <p>我是段林帅，计算机科学与技术专业的学生，正在上暑假短学期。</p>
+    <main class="index-main-layout">
+        <!-- 英雄区域 -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">欢迎来到</span>
+                        <span class="title-highlight">段林帅</span>
+                        <span class="title-line">的个人网站</span>
+                    </h1>
+                    
+                    <!-- 打字机效果区域 -->
+                    <div class="typewriter-container">
+                        <div id="typewriter" class="typewriter-text"></div>
+                        <div class="typewriter-cursor"></div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="about.html" class="btn btn-primary">查看简历</a>
+                        <a href="portfolio.html" class="btn btn-secondary">浏览项目</a>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <button onclick="showMemoryAlbum()" class="btn btn-secondary">查看回忆录</button>
+                    </div>
+                </div>
                 
-                <section>
-                    <h2>我的技能</h2>
-                    <ul>
-                        <li>编程语言：Python, Java, C++</li>
-                        <li>前端技术：HTML, CSS, JavaScript</li>
-                        <li>机器学习：深度学习，计算机视觉</li>
-                        <li>项目经验：多个国家级和校级创新项目</li>
-                    </ul>
-                </section>
-                
-                <section>
-                    <h2>最新动态</h2>
-                    <p>目前正在参与多个研究项目，包括基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究等。</p>
-                </section>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="card card-1">
+                            <div class="card-icon">💻</div>
+                            <div class="card-text">编程</div>
+                        </div>
+                        <div class="card card-2">
+                            <div class="card-icon">🤖</div>
+                            <div class="card-text">AI</div>
+                        </div>
+                        <div class="card card-3">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-text">创新</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能展示区域 -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">我的技能专长</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python开发</h3>
+                        <p>深度学习、数据分析、Web开发</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">☕</div>
+                        <h3>Java开发</h3>
+                        <p>企业级应用、Android开发</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">⚡</div>
+                        <h3>C++开发</h3>
+                        <p>系统编程、算法优化</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🌐</div>
+                        <h3>前端技术</h3>
+                        <p>HTML、CSS、JavaScript</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="75"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🧠</div>
+                        <h3>机器学习</h3>
+                        <p>深度学习、计算机视觉</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🚀</div>
+                        <h3>项目经验</h3>
+                        <p>国家级创新项目、学术研究</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 最新动态区域 -->
+        <section class="news-section">
+            <div class="container">
+                <h2 class="section-title">最新动态</h2>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-date">2024年12月</div>
+                        <h3>🏆 获得省级物理竞赛二等奖</h3>
+                        <p>在浙江省大学生物理创新（理论）竞赛中获得省级二等奖，展现了扎实的物理基础。</p>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-date">2024年11月</div>
+                        <h3>📚 发表SAE期刊论文</h3>
+                        <p>以通讯作者身份在SAE期刊发表论文《LDFA：Lightweight Dynamic Feature Aggregation for Multi-modal Fusion》。</p>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-date">2024年10月</div>
+                        <h3>🔬 获得软件著作权</h3>
+                        <p>获得《机器加工视觉对位系统V1.0》软件著作权，登记号：2024SR2134060。</p>
+                    </div>
+                    
+                    <div class="news-card">
+                        <div class="news-date">2024年9月</div>
+                        <h3>🚁 主持国创项目</h3>
+                        <p>开始主持国家级创新项目《基于多模态融合的高空无人机轻量化目标检测与跟踪系统研究》。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 快速链接区域 -->
+        <section class="quick-links-section">
+            <div class="container">
+                <h2 class="section-title">快速导航</h2>
+                <div class="links-grid">
+                    <a href="about.html" class="link-card">
+                        <div class="link-icon">📋</div>
+                        <h3>详细简历</h3>
+                        <p>查看我的完整教育背景、项目经历和技能详情</p>
+                    </a>
+                    
+                    <a href="portfolio.html" class="link-card">
+                        <div class="link-icon">💼</div>
+                        <h3>项目作品</h3>
+                        <p>浏览我的GitHub项目和技术作品展示</p>
+                    </a>
+                    
+                    <a href="contact.html" class="link-card">
+                        <div class="link-icon">📧</div>
+                        <h3>联系我</h3>
+                        <p>通过多种方式与我取得联系，期待合作机会</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式区域 -->
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="section-title">联系方式</h2>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-info">
+                            <h3>邮箱</h3>
+                            <p>3413571766@qq.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-info">
+                            <h3>电话</h3>
+                            <p>18363567977</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🎓</div>
+                        <div class="contact-info">
+                            <h3>学校</h3>
+                            <p>浙大城市学院</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-info">
+                            <h3>专业</h3>
+                            <p>计算机科学与技术</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2024 段林帅的个人网站. 用 ❤️ 和 ☕ 制作</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- 隐藏的回忆录界面 -->
+    <div id="memoryAlbum" class="memory-album hidden">
+        <div class="memory-header">
+            <h2>💕 我们的美好回忆 💕</h2>
+            <button id="closeMemory" class="close-btn">✕</button>
+        </div>
+        <div class="memory-content">
+            <!-- 测试提示 -->
+            <div style="text-align: center; margin-bottom: 2rem; color: white; background: lightblue; padding: 1rem; border-radius: 10px;">
+                <p>🎉 恭喜你发现了隐藏功能！</p>
+                <p>秘密代码：↑↑↓↓←→←→BA</p>
             </div>
             
-            <aside>
-                <h2>快速链接</h2>
-                <ul>
-                    <li><a href="about.html">查看我的详细简历</a></li>
-                    <li><a href="portfolio.html">浏览我的项目作品</a></li>
-                    <li><a href="contact.html">联系我</a></li>
-                </ul>
+            <div class="memory-grid">
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="第一张合照" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一张合照</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/memory2.jpg" alt="美好回忆2" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆2</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>一起看日落</h3>
+                        <p>夕阳西下，我们手牵手...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/memory3.jpg" alt="美好回忆3" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆3</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>旅行时光</h3>
+                        <p>一起走过的每一个地方...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/memory4.jpg" alt="美好回忆4" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆4</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>甜蜜时光</h3>
+                        <p>每一个平凡的日子都因你而特别...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/memory5.jpg" alt="美好回忆5" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆5</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>未来憧憬</h3>
+                        <p>期待与你一起创造更多美好回忆...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/memory6.jpg" alt="美好回忆6" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆6</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>爱的誓言</h3>
+                        <p>愿我们的爱情如初见般美好...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+                <div class="memory-item">
+                    <div class="memory-image">
+                        <img src="images/first-pic.jpg" alt="美好回忆1" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'><rect width=\'200\' height=\'200\' fill=\'%23ff69b4\' opacity=\'0.3\'/><text x=\'100\' y=\'100\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23ff1493\' font-size=\'16\'>💕 回忆1</text></svg>'">
+                    </div>
+                    <div class="memory-text">
+                        <h3>第一次相遇</h3>
+                        <p>那是一个阳光明媚的下午...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 主题切换功能
+        const themeToggle = document.getElementById('themeToggle');
+
+        // 检查本地存储中的主题设置
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // 根据当前主题设置按钮图标
+        function updateThemeIcon() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            themeToggle.textContent = isDark ? '🌙' : '☀️';
+        }
+
+        // 初始化按钮图标
+        updateThemeIcon();
+
+        // 主题切换事件
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            // 应用新主题
+            document.documentElement.setAttribute('data-theme', newTheme);
+
+            // 保存到本地存储
+            localStorage.setItem('theme', newTheme);
+
+            // 更新按钮图标
+            updateThemeIcon();
+
+            // 添加点击反馈
+            themeToggle.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                themeToggle.style.transform = 'scale(1)';
+            }, 150);
+        });
+
+        // 技能条动画
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+            skillBars.forEach(bar => {
+                const level = bar.getAttribute('data-level');
+                bar.style.width = level + '%';
+            });
+        }
+
+        // 滚动动画
+        function handleScrollAnimation() {
+            const elements = document.querySelectorAll('.skill-card, .news-card, .link-card');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
                 
-                <h2>联系方式</h2>
-                <p>邮箱：3413571766@qq.com</p>
-                <p>电话：13800138000</p>
-            </aside>
-        </main>
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animate');
+                }
+            });
+        }
+
+        // 页面加载完成后执行动画
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(animateSkillBars, 1000);
+            window.addEventListener('scroll', handleScrollAnimation);
+            handleScrollAnimation(); // 初始检查
+        });
+        // -----------------------------------------------------
+        // -----------------------------------------------------
+        // 专业打字机效果
+        class Typewriter {
+            constructor(element, texts, options = {}) {
+                this.element = element;
+                this.texts = texts;
+                this.currentTextIndex = 0;
+                this.currentCharIndex = 0;
+                this.isDeleting = false;
+                this.isRunning = false;
+                
+                // 配置选项
+                this.typeSpeed = options.typeSpeed || 100;      // 打字速度
+                this.deleteSpeed = options.deleteSpeed || 50;   // 删除速度
+                this.pauseTime = options.pauseTime || 2000;     // 停顿时间
+                this.loop = options.loop !== false;            // 是否循环
+                
+                this.init();
+            }
+            
+            init() {
+                // 页面加载完成后自动开始
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        this.start();
+                    });
+                } else {
+                    this.start();
+                }
+            }
+            
+            start() {
+                this.isRunning = true;
+                this.type();
+            }
+            
+            type() {
+                const currentText = this.texts[this.currentTextIndex];
+                
+                if (this.isDeleting) {
+                    // 删除模式
+                    this.element.textContent = currentText.substring(0, this.currentCharIndex - 1);
+                    this.currentCharIndex--;
+                } else {
+                    // 打字模式
+                    this.element.textContent = currentText.substring(0, this.currentCharIndex + 1);
+                    this.currentCharIndex++;
+                }
+                
+                let typeSpeed = this.typeSpeed;
+                
+                if (this.isDeleting) {
+                    typeSpeed = this.deleteSpeed;
+                }
+                
+                if (!this.isDeleting && this.currentCharIndex === currentText.length) {
+                    // 完成打字，准备删除
+                    typeSpeed = this.pauseTime;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.currentCharIndex === 0) {
+                    // 完成删除，准备下一句
+                    this.isDeleting = false;
+                    this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+                    typeSpeed = 500; // 切换文本前的短暂停顿
+                }
+                
+                setTimeout(() => {
+                    if (this.isRunning) {
+                        this.type();
+                    }
+                }, typeSpeed);
+            }
+            
+            stop() {
+                this.isRunning = false;
+                this.startBtn.disabled = false;
+                this.startBtn.textContent = '重新开始打字机效果';
+            }
+        }
+        
+        // 初始化打字机
+        const typewriterElement = document.getElementById('typewriter');
+        const typewriterTexts = [
+            "你好，我是段林帅 👋",
+            "一名计算机科学与技术专业的学生 🎓",
+            "正在上暑假短学期 📚",
+            "热爱编程和机器学习 💻",
+            "专注于深度学习与计算机视觉 🤖",
+            "欢迎来到我的个人网站 ✨"
+        ];
+        
+        const typewriter = new Typewriter(typewriterElement, typewriterTexts, {
+            typeSpeed: 120,      // 打字速度
+            deleteSpeed: 60,     // 删除速度
+            pauseTime: 500,     // 显示停顿时间
+            loop: true           // 无限循环
+        });
+        
+        // ===== 隐藏的回忆录功能 =====
+        // 按键组合检测：上上下下左右左右BA
+        let keySequence = [];
+        const secretCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
+        
+        // 键盘事件监听
+        document.addEventListener('keydown', (e) => {
+            keySequence.push(e.code);
+            
+            // 保持序列长度不超过秘密代码长度
+            if (keySequence.length > secretCode.length) {
+                keySequence.shift();
+            }
+            
+            // 检查是否匹配秘密代码
+            if (keySequence.length === secretCode.length) {
+                const isMatch = keySequence.every((key, index) => key === secretCode[index]);
+                if (isMatch) {
+                    console.log('🎮 秘密代码激活！显示回忆录界面');
+                    showMemoryAlbum();
+                    keySequence = []; // 重置序列
+                }
+            }
+        });
+
+        // 显示回忆录界面
+        function showMemoryAlbum() {
+            const memoryAlbum = document.getElementById('memoryAlbum');
+            if (memoryAlbum) {
+                memoryAlbum.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // 防止背景滚动
+                
+                // 添加淡入动画
+                setTimeout(() => {
+                    memoryAlbum.classList.add('fade-in');
+                }, 10);
+                
+                console.log('✨ 回忆录界面已显示');
+            } else {
+                console.error('❌ 未找到回忆录界面元素');
+            }
+        }
+
+        // 隐藏回忆录界面
+        function hideMemoryAlbum() {
+            const memoryAlbum = document.getElementById('memoryAlbum');
+            if (memoryAlbum) {
+                memoryAlbum.classList.remove('fade-in');
+                memoryAlbum.classList.add('fade-out');
+                
+                setTimeout(() => {
+                    memoryAlbum.classList.add('hidden');
+                    memoryAlbum.classList.remove('fade-out');
+                    document.body.style.overflow = 'auto'; // 恢复背景滚动
+                }, 300);
+                
+                console.log('🔒 回忆录界面已隐藏');
+            }
+        }
+
+        // 关闭按钮事件
+        document.addEventListener('DOMContentLoaded', () => {
+            const closeBtn = document.getElementById('closeMemory');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', hideMemoryAlbum);
+                console.log('✅ 关闭按钮事件已绑定');
+            }
+            
+            // 点击背景关闭
+            const memoryAlbum = document.getElementById('memoryAlbum');
+            if (memoryAlbum) {
+                memoryAlbum.addEventListener('click', (e) => {
+                    if (e.target === memoryAlbum) {
+                        hideMemoryAlbum();
+                    }
+                });
+                console.log('✅ 背景点击关闭事件已绑定');
+            }
+        });
+
+        // ESC键关闭回忆录
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Escape') {
+                const memoryAlbum = document.getElementById('memoryAlbum');
+                if (memoryAlbum && !memoryAlbum.classList.contains('hidden')) {
+                    hideMemoryAlbum();
+                }
+            }
+        });
+
+        // 调试信息
+        console.log('🎮 回忆录功能已加载');
+        console.log('📝 秘密代码：上上下下左右左右BA');
+        console.log('🔍 按F12查看控制台信息');
+    </script>
     </body>
+
 </html>
